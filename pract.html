@@ -1,0 +1,116 @@
+<html>
+<head> 
+    <!-- Tab Title of Page -->
+   <title>INST377-Activities Stocks Page</title>
+   <style>
+   /*Sets background color to body*/
+   body{
+    background-color: lightblue;
+   }
+    /* Header 
+       -Gave padding & top margin 
+    */
+    header{padding: 20px;
+           margin-top: 2%;
+    }
+    
+    /*Changes color for main nav bar*/
+    #main-nav {
+        background-color:burlywood
+    }
+
+    /*Centers the main nav bar ul text*/
+    #main-nav ul{
+        text-align: center;
+    }
+
+     /*Styles the nav bar options*/
+    #main-nav ul li {
+        list-style-type: none;
+        display: inline-block;
+        text-align: center;
+        width: 8%;
+        padding: 12px;
+    }
+
+    /*Removes hyperlink style*/
+    #main-nav li a{
+        text-decoration: none;
+        color: black;
+    }
+    
+    /*Color change for the nav options box on hover*/
+    #main-nav li:hover  {
+        background-color:darkorange;
+    }
+    /*Color change for the nav options text on hover*/
+    #main-nav li:hover a  {
+        color: aliceblue;
+    }
+
+    /*Button hover element*/
+    #contactButton:hover{
+        background-color: blue;
+        color: red;
+    }
+
+    .chart{
+        margin-top: 10px;
+    }
+    </style>
+
+<script src="stockChart.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+    <!--Header with H1 tag  -->
+    <header>
+        <h1>INST377 - Activities</h1>
+    </header>
+
+    <!--Navgiation Bar with ID-->
+    <nav id="main-nav">
+        <ul>
+            <!--Adding links to each option -->
+            <li><a href="A2_Home.html">Home</a></li>
+            <li><a href="A2_Stocks.html">Stocks</a></li>
+            <li><a href="A2_Dogs.html">Dogs</a></li>
+        </ul>
+    </nav>
+
+    <!--h1 header title for home page -->
+    <h1>Let's chart some stocks!</h1>
+
+
+    <!-- Start of form -->
+    <form name="rpsForm" onsubmit="return callAPI()">
+        
+        <!-- Name Label, required -->
+        <input type="text" id = "stockName" maxlength = "5" required >
+    
+        <!-- Spacing -->
+        <br>
+    
+         <!-- Selector for RPS -->
+        <select id = "selector">
+            <option value="30">30 Days</option>
+            <option value="60">60 Days</option>
+            <option value="90">90 Days</option>
+        </select> 
+    
+        <!-- Spacing -->
+        <br> <br>
+    
+        <!-- Submit Button -->
+        <input type="submit" value="Lookup!">
+    
+        </form>
+    
+            <div class="Chart">
+                <canvas id="myChart"></canvas>
+            </div>
+    
+
+</body>
+</html>
